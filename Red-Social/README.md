@@ -1,3 +1,6 @@
+Para usar este proyecto tienen que instalar con estos comandos:
+npm install 
+
 Instalamos la libreria: ng add @angular/fire
 
 
