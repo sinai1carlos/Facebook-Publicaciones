@@ -1,0 +1,213 @@
+<div class="container">
+  <h1>Red Social Temática: Facebook</h1>
+  <div *ngFor="let post of publicaciones; let i=index" class="publicacion">
+    <div class="post-header">
+      <div class="avatar">
+        <img src="https://1.bp.blogspot.com/-K_Wht2Pi6V8/VxVr9aPmyBI/AAAAAAAAFiI/8dEuhvVnVD0fzT15u8iyU0ErOlqsq8j1wCLcB/s1600/Avatar-facebook.png" alt="Avatar del usuario">
+      </div>
+      <div class="post-info">
+        <h2>{{ post.titulo }}</h2>
+        <span class="info">{{ post.autor }} - {{ post.fecha | date:'medium' }}</span>
+      </div>
+    </div>
+    <div>
+      <h1>{{ post.contenido }}</h1>
+    </div>
+    <div class="info" *ngIf="contTotal>0" style="margin-top: 30px;" >
+      <div *ngIf="contLike>0" style="margin-left: 8px;">
+        <i class="fa-solid fa-thumbs-up" ></i>{{contLike}}
+      </div>
+      <div *ngIf="contLove>0" style="margin-left: 8px;">
+        <i class="fa-solid fa-face-grin-hearts"></i> {{contLove}}
+      </div>
+      <div *ngIf="contAngry>0" style="margin-left: 8px;">
+        <i class="fa-solid fa-face-angry" *ngIf="contAngry>0"></i > {{contAngry}}
+      </div>
+      <div *ngIf="contSad>0" style="margin-left: 8px;">
+        <i class="fa-solid fa-face-sad-cry" *ngIf="contSad>0"></i> {{contSad}}
+      </div>
+    </div>
+    <div *ngIf="activo">
+      <div class="caja-emote">
+        <div>
+          <div>
+            <button class="emoteClick" (click)="contadorLike();activarEmote()">
+              <i class="fa-solid fa-thumbs-up" style="color: #fff;"></i>
+            </button>
+          </div>
+          <div class="nombreEmote">
+            Me<br>gusta
+          </div>
+        </div>
+        <div>
+          <div>
+            <button class="emoteClick" (click)="contadorLove();activarEmote()">
+              <i class="fa-solid fa-face-grin-hearts" style="color: #fff;">
+              </i></button>
+          </div>
+          <div class="nombreEmote">
+            Me<br>encanta
+          </div>
+        </div>
+        <div>
+          <div>
+            <button class="emoteClick" (click)="contadorAngry();activarEmote()">
+              <i class="fa-solid fa-face-angry" style="color: #fff;"></i>
+            </button>
+          </div>
+          <div class="nombreEmote">
+            Me<br>enfada
+          </div>
+        </div>
+        <div>
+          <div>
+            <button class="emoteClick" (click)="contadorSad();activarEmote()">
+              <i class="fa-solid fa-face-sad-cry" style="color: #fff;"></i>
+            </button>
+          </div>
+          <div class="nombreEmote">
+            Me<br>entristece
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="barra-baja">
+      <div class="barra-baja-emote">
+        <button class="botonReaccion" (click)="activarEmote()">
+          <i class="fa-solid fa-thumbs-up" style="color: #fff;"></i> <b style="color: #fff;"> {{contTotal}} </b>
+        </button>
+      </div>
+      <div class="barra-baja-comentario" (click)="activarcomentario()">
+        <button class="botonReaccion">
+          <i class="fa-solid fa-comment" style="color: #fff;"></i> 
+        </button>
+        </div>
+    </div>
+
+    <div *ngIf="activoComentario">
+      <div class="comments-box">
+        <div class="user-comment">
+          <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="User Profile">
+          <div class="comment-content">
+            <span class="user-name">John Doe</span>
+            <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div>
+              <div class="info" *ngIf="contTotalRespuesta>0">
+                <div *ngIf="contLikeRespuesta>0" style="margin-left: 8px;">
+                  <i class="fa-solid fa-thumbs-up" ></i>{{contLikeRespuesta}}
+                </div>
+                <div *ngIf="contLoveRespuesta>0" style="margin-left: 8px;">
+                  <i class="fa-solid fa-face-grin-hearts"></i> {{contLoveRespuesta}}
+                </div>
+                <div *ngIf="contAngryRespuesta>0" style="margin-left: 8px;">
+                  <i class="fa-solid fa-face-angry" *ngIf="contAngryRespuesta>0"></i > {{contAngryRespuesta}}
+                </div>
+                <div *ngIf="contSadRespuesta>0" style="margin-left: 8px;">
+                  <i class="fa-solid fa-face-sad-cry" *ngIf="contSadRespuesta>0"></i> {{contSadRespuesta}}
+                </div>
+              </div>
+              
+              <div *ngIf="activoRespuesta">
+                <div class="caja-emote-respuesta">
+                  <div>
+                    <div>
+                      <button class="emoteClick" (click)="contadorLikeRespuesta();activarEmoteRespuesta()">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                      </button>
+                    </div>
+                    <div class="nombreEmote">
+                      Me<br>gusta
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <button class="emoteClick" (click)="contadorLoveRespuesta();activarEmoteRespuesta()">
+                        <i class="fa-solid fa-face-grin-hearts">
+                        </i></button>
+                    </div>
+                    <div class="nombreEmote">
+                      Me<br>encanta
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <button class="emoteClick" (click)="contadorAngryRespuesta();activarEmoteRespuesta()">
+                        <i class="fa-solid fa-face-angry"></i>
+                      </button>
+                    </div>
+                    <div class="nombreEmote">
+                      Me<br>enfada
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <button class="emoteClick" (click)="contadorSadRespuesta();activarEmoteRespuesta()">
+                        <i class="fa-solid fa-face-sad-cry" style="color: #fff;"></i>
+                      </button>
+                    </div>
+                    <div class="nombreEmote">
+                      Me<br>entristece
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <button (click)="activarEmoteRespuesta()" style="margin-top: 5px;">Me gusta</button>
+              <button (click)="activarInputRespuesta()" style="margin-left: 15px;">Responder</button>
+            </div>
+
+            <div class="Responder">
+              <div class="user-comment" *ngIf="activaTextoComentarioRespuesta">
+                <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="User Profile">
+                <div class="commentario-texto">
+                  <span class="user-name">{{nombreUsuarioRespuesta}}</span>
+                  <p class="commentario-texto">{{comentarioUsuarioRespuesta}}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div *ngIf="activaInputRespuesta" class="user-comment caja-respuesta comment-content" id="new-comment">
+              <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="User Profile">
+              <div class="nombre-respuesta">
+                <div class="comment-text">
+                  <input type="text" [(ngModel)]="nombreUsuarioRespuesta"placeholder="Digite su nombre..." >
+                </div>
+                <div class="commentario-texto">
+                  <input type="text" placeholder="Escriba un comentario..." [(ngModel)]="comentarioUsuarioRespuesta">
+                </div>
+                <div class="commentario-texto">
+                  <button (click)="activarComentarioRespuesta()">Enviar comentario</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="user-comment" *ngIf="activaTextoComentario">
+          <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="User Profile">
+          <div class="commentario-texto">
+            <span class="user-name">{{nombreUsuario}}</span>
+            <p class="commentario-texto">{{comentarioUsuario}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="user-comment caja-respuesta comment-content" id="new-comment">
+        <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="User Profile">
+        <div class="nombre-respuesta">
+          <div class="comment-text">
+            <input type="text" [(ngModel)]="nombreUsuario" >
+          </div>
+          <div class="commentario-texto">
+            <input type="text" placeholder="Escriba un comentario..." [(ngModel)]="comentarioUsuario">
+          </div>
+          <div class="commentario-texto">
+            <button (click)="activarTextoComentario()">Enviar comentario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

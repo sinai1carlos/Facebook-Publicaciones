@@ -1,0 +1,194 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    
+    border-radius: 10px;
+    border: 2px solid wheat;
+  }
+  
+  .publicacion {
+    padding: 10px;
+    margin-bottom: 20px;
+    height: auto;
+    min-height: 200px;
+    border-radius: 10px;
+    background-color: transparent;
+    
+  }
+  
+  .info {
+    margin-top: 10px;
+    font-size: 14px;
+    display:flex
+  }
+  
+  
+  /* Estilos para el encabezado de cada publicación */
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para el avatar del usuario */
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Estilos para el título de la publicación */
+  .post-info h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para el contenido de la publicación */
+  .post-info p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Estilos para la información del autor y fecha */
+  .info span {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .barra-baja {
+    border-top: 1px solid #fff;
+    display: flex;
+    padding: 10px;
+    margin-top:10px ;
+    background-color: transparent;
+    justify-content: space-around;
+    color: #fff;
+  }
+
+
+.botonReaccion {
+    width: 200px;
+    margin: auto;
+    border-radius: 20px;
+    background-color: transparent; /* Botón transparente */
+    border: 1px solid #fff; /* Elimina el borde del botón (opcional) */
+    padding: 5px; /* Elimina el relleno del botón (opcional) */
+    font-size: 20px; /* Ajusta el tamaño del texto (opcional) */
+    cursor: pointer; /* Muestra el cursor como un puntero (opcional) */
+}
+.emoteClick{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  border:none;
+  width: 50px;
+  border-radius: 40%;
+  margin-right:20px ;
+  margin-left: 15px;
+}
+.caja-emote {
+  background-color: gray;
+  border-radius: 20px;
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin-left:  25px;
+  padding: 12px;
+  top: 240px;
+}
+.caja-emote-respuesta {
+  background-color: gray;
+  border-radius: 20px;
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  margin-left:  25px;
+  padding: 12px;
+  top: 410px;
+}
+.caja-emote-respuesta i{
+  font-size: 30px;
+  margin:  10px;
+}
+.caja-emote i{
+  font-size: 30px;
+  margin:  10px;
+}
+.nombreEmote{
+  font-size: 16px;
+  text-align: center;
+}
+
+.comments-box {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.caja-respuesta {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.user-comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.user-comment img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.comment-text {
+  margin-top: 5px;
+}
+.commentario-texto {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+/* Estilos anteriores... */
+
+.comment-content input {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.comment-content button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

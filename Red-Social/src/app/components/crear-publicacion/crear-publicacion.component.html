@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Crear Nueva Publicación</h1>
+    <div style="align-items: center;">
+      <form class="crear-publicacion-form">
+        <div class="form-group">
+          <input type="text" id="titulo" [(ngModel)]="nuevaPublicacion.titulo" name="titulo" class="form-control" placeholder="¿Qué estás pensando?" required>
+        </div>
+        <div class="form-group">
+          <textarea id="contenido" [(ngModel)]="nuevaPublicacion.contenido" name="contenido" rows="5" class="form-control" placeholder="Escribe algo..."></textarea>
+        </div>
+      </form>
+    </div>
+    <div style="display: flex;">
+      <div>
+        <button (click)="crearPublicacion()" class="btn-publicar">Publicar</button>
+      </div>
+      <div>
+        <button class="btn-publicar" (click)="cancelar()" style="margin-left: 10px;">Cancelar</button>
+      </div>
+    </div>
+    
+  </div>
+  
